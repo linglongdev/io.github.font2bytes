@@ -1,0 +1,28 @@
+version: "1"
+
+package:
+  id: io.github.font2bytes
+  name: font2bytes
+  version: 0.0.0.1
+  kind: app
+  description: |
+    converts font images to byte arrays for use in embedded systems
+
+command:
+  - /opt/apps/io.github.font2bytes/files/bin/font2bytes
+
+base: org.deepin.foundation/23.0.0
+runtime: org.deepin.Runtime/23.0.1
+
+sources:
+  - kind: git
+    url: https://github.com/ayoy/font2bytes.git
+    version: master
+    commit: 2d57745e2b6459a0999493a7732135c74da8ce4f
+
+build: |
+  cd /project/linglong/sources/font2bytes.git
+  git apply ../../../0001-install.patch
+  qmake FontToBytes-gui.pro PREFIX=${PREFIX} LIB_INSTALL_DIR=${PREFIX}/lib/${TRIPLET}
+  make -j$(nproc)
+  make install
