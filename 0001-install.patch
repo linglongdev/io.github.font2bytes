@@ -1,0 +1,24 @@
+From e5b908c6fb7589dd6aa3a81b818225727e6c70f0 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 11 Aug 2024 20:00:48 +0800
+Subject: [PATCH] install
+
+---
+ gui/ui/droplabel.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/gui/ui/droplabel.cpp b/gui/ui/droplabel.cpp
+index 54def8c..3922b82 100644
+--- a/gui/ui/droplabel.cpp
++++ b/gui/ui/droplabel.cpp
+@@ -1,6 +1,6 @@
+ #include "droplabel.h"
+ #include <QPainter>
+-
++#include <QPainterPath>
+ DropLabel::DropLabel(QWidget *parent):
+     PromptLabel(parent)
+ {
+-- 
+2.43.4
+
